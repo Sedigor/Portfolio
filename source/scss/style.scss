@@ -103,11 +103,27 @@ body {
 
 .info {
    display: flex;
+   justify-content: space-between;
    padding: 100px 0;
-   margin: 0 -50px;
+   column-gap: 30px;
 
    &__body {
-      padding: 0 50px 50px;
+      width: 57%;
+      max-width: 622px;
+   }
+
+   &__namebox {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0 0 40px 0;
+      column-gap: 10px;
+   }
+
+   &__line {
+      width: 102px;
+      height: 1px;
+      background-color: $main-blue;
    }
 
    &__name {
@@ -115,20 +131,8 @@ body {
       font-weight: 500;
       font-size: 20px;
       line-height: 28px;
-      padding: 0 0 0 112px;
-      position: relative;
-      margin: 0 0 40px 0;
    }
 
-   &__name::before {
-      content: "";
-      width: 102px;
-      height: 1px;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      background-color: $main-blue;
-   }
 
    &__title {
       font-weight: 700;
@@ -164,6 +168,10 @@ body {
       .info__buttons {
          justify-content: center;
       }
+
+      &__line {
+         flex: 1 1 auto;
+      }
    }
    
    &__hire-button {
@@ -193,13 +201,13 @@ body {
    }
 
    &__photo {
-      margin: 0 50px;
       border-radius: 6px;
       overflow: hidden;
       border-radius: 6px;
       overflow: hidden;
       flex: 1 1 auto;
-      width: 482px;
+      max-width: 472px;
+      width: 43%;
             
       img {
          width: 100%;
@@ -211,8 +219,19 @@ body {
    @media (max-width: 767px) {
       .info__photo {
          height: 300px;
+         max-width: 768px;
          width: 100%;
          margin-bottom: 20px;
+      }
+
+      .info__body {
+         max-width: 100%;
+         width: 100%;
+      }
+
+      .info__title {
+         font-size: 9.375vw;
+         line-height: 9.375vw;
       }
    }
 }
@@ -221,14 +240,20 @@ body {
    .info {
       flex-direction: column-reverse;
       text-align: center;
+      padding: 10vw 0;
+   }
+
+   .title {
+      font-size: 6.28vw;
+      line-height: 6.25vw;
    }
 }
 .from {
    padding: 100px 0 150px;
 
    &__title {
-      padding: 0 70px;
-      margin: 0 0 150px 0;
+      max-width: 1040px;
+      margin: 0 auto 150px;
 
       span {
          color: $main-blue;
@@ -400,6 +425,7 @@ body {
 
    &__button {
       position: absolute;
+      width: calc(100% - 40px);
       bottom: 0;
       left: 0;
       margin: 20px;
@@ -594,5 +620,3 @@ body {
       }
    }
 }
-
-

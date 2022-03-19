@@ -188,29 +188,44 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 100px 0;
-  margin: 0 -50px;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
 }
 .info__body {
-  padding: 0 50px 50px;
+  width: 57%;
+  max-width: 622px;
+}
+.info__namebox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0 40px 0;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+}
+.info__line {
+  width: 102px;
+  height: 1px;
+  background-color: #3730A3;
 }
 .info__name {
   color: #3730A3;
   font-weight: 500;
   font-size: 20px;
   line-height: 28px;
-  padding: 0 0 0 112px;
-  position: relative;
-  margin: 0 0 40px 0;
-}
-.info__name::before {
-  content: "";
-  width: 102px;
-  height: 1px;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  background-color: #3730A3;
 }
 .info__title {
   font-weight: 700;
@@ -246,6 +261,11 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .info__line {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
 }
 .info__hire-button {
   margin: 0 20px 0 0;
@@ -272,7 +292,6 @@ body {
   }
 }
 .info__photo {
-  margin: 0 50px;
   border-radius: 6px;
   overflow: hidden;
   border-radius: 6px;
@@ -280,7 +299,8 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  width: 482px;
+  max-width: 472px;
+  width: 43%;
 }
 .info__photo img {
   width: 100%;
@@ -291,8 +311,17 @@ body {
 @media (max-width: 767px) {
   .info .info__photo {
     height: 300px;
+    max-width: 768px;
     width: 100%;
     margin-bottom: 20px;
+  }
+  .info .info__body {
+    max-width: 100%;
+    width: 100%;
+  }
+  .info .info__title {
+    font-size: 9.375vw;
+    line-height: 9.375vw;
   }
 }
 
@@ -303,14 +332,20 @@ body {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
     text-align: center;
+    padding: 10vw 0;
+  }
+
+  .title {
+    font-size: 6.28vw;
+    line-height: 6.25vw;
   }
 }
 .from {
   padding: 100px 0 150px;
 }
 .from__title {
-  padding: 0 70px;
-  margin: 0 0 150px 0;
+  max-width: 1040px;
+  margin: 0 auto 150px;
 }
 .from__title span {
   color: #3730A3;
@@ -489,6 +524,7 @@ body {
 }
 .give__button {
   position: absolute;
+  width: calc(100% - 40px);
   bottom: 0;
   left: 0;
   margin: 20px;
